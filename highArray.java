@@ -56,6 +56,24 @@ class HighArray
       System.out.println("");
       }
    //-----------------------------------------------------------
+      // Assignment 2.1 pg. 76, method returns the value of the highest key in the array
+
+      public long getMax() {
+
+      long max = 0;
+
+      if (nElems == 0) {
+         max = -1;
+      }
+      for(int k = 0; k < nElems; k++)
+         for(int m = k + 1; m < nElems; m++)
+            if(a[k] > max) {
+               max = a[k];
+            } else if(a[m] > max)
+                max = a[m];
+
+            return max;
+      }
    }  // end class HighArray
 ////////////////////////////////////////////////////////////////
 class HighArrayApp
@@ -88,6 +106,11 @@ class HighArrayApp
       arr.delete(00);               // delete 3 items
       arr.delete(55);
       arr.delete(99);
+         System.out.println();
+
+         System.out.print("Max: " +  arr.getMax());
+
+         System.out.println();
 
       arr.display();                // display items again
       }  // end main()
