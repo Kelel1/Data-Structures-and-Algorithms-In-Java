@@ -74,6 +74,14 @@ class HighArray
 
             return max;
       }
+      //-----------------------------------------------------------
+      // Assignment 2.2 pg. 76, modify method to
+
+      public void removeMax() {
+         long max = getMax();
+         delete(max);
+      }
+
    }  // end class HighArray
 ////////////////////////////////////////////////////////////////
 class HighArrayApp
@@ -111,6 +119,8 @@ class HighArrayApp
          System.out.print("Max: " +  arr.getMax());
 
          System.out.println();
+
+         arr.removeMax();
 
       arr.display();                // display items again
       }  // end main()
