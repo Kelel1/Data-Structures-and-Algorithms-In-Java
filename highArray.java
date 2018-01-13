@@ -3,6 +3,9 @@
 // to run this program: C>java HighArrayApp
 ////////////////////////////////////////////////////////////////
 package HighArray;
+
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+
 class HighArray
    {
    private long[] a;                 // ref to array a
@@ -103,6 +106,25 @@ class HighArrayApp
       arr.insert(66);
       arr.insert(33);
 
+         //-----------------------------------------------------------
+         // Assignment 2.3 pg. 76 crude selection sort.
+
+      long[] arr2 = new long[maxSize];
+
+      for(int u = 0; u < 10; u++) {
+         long max = arr.getMax();
+         arr2[u] = max;
+         arr.delete(max);
+
+      }
+
+      for(int s = 0; s < 10; s++) {
+
+         System.out.print(arr2[s] + " ");
+
+      }
+
+
       arr.display();                // display items
 
       int searchKey = 35;           // search for item
@@ -120,7 +142,7 @@ class HighArrayApp
 
          System.out.println();
 
-         arr.removeMax();
+//         arr.removeMax();
 
       arr.display();                // display items again
       }  // end main()
