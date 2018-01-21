@@ -39,8 +39,25 @@ class OrdArray
          }  // end while
       }  // end find()
    //-----------------------------------------------------------
+      // Assignment 2.4, pg 76, modify insert() method to use binary search
    public void insert(long value)    // put element into array
       {
+      int lowEnd = 0;
+      int highEnd = nElems - 1;
+      int currVal;
+
+      while(true)
+      {
+         currVal = (lowEnd + highEnd) / 2;
+         if(a[currVal] > value && a[currVal - 1] < value)
+            break;
+         else {
+            if(a[currVal] < value)
+               lowEnd = currVal + 1;
+            else
+               highEnd = currVal - 1;
+         }
+      }
       int j;
       for(j=0; j<nElems; j++)        // find where it goes
          if(a[j] > value)            // (linear search)
@@ -51,6 +68,7 @@ class OrdArray
       nElems++;                      // increment size
       }  // end insert()
    //-----------------------------------------------------------
+   // Assignment 2.4, pg 76, modify delete() method to use binary search
    public boolean delete(long value)
       {
       int j = find(value);
